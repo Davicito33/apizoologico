@@ -1,9 +1,15 @@
-'use strict';
-const http = require('http');
+const express = require('express')
+const app = express()
+const port = 3000
 
-const server = http.createServer(function(req, res){
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hola mundo');
-});
+app.get('/prueba', (req, res) => {
+     res.send('Hola, Mundo :)')
 
-server.listen(5000);
+
+})
+
+app.listen(port, () => {
+console.log('La aplicacion se esta ejecuntando por el puerto ' + port)
+
+
+})
